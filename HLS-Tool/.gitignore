@@ -30,3 +30,6 @@ packages/
 # OS
 .DS_Store
 Thumbs.db
+
+# Local development secrets
+appsettings.Development.json

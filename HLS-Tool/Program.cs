@@ -24,7 +24,7 @@ namespace Hyper_Radio_API
             // Dependency Injection services
             builder.Services.AddScoped<ITrackService, TrackService>();
             builder.Services.AddScoped<ITrackRepository, TrackRepository>(); // <-- missing one!
-            builder.Services.Configure<BlobSettings>(builder.Configuration.GetSection("AzureBlob"));
+            builder.Services.Configure<BlobSettings>(builder.Configuration.GetSection("BlobSettings"));
             builder.Services.AddSingleton<BlobService>();
             builder.Services.AddSingleton<HlsConverterService>();
 
