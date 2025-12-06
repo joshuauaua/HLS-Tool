@@ -1,0 +1,43 @@
+## Build Artifacts
+bin/
+obj/
+*.dll
+*.exe
+*.pdb
+*.cache/
+*.tmp
+*.ref
+*.gz
+
+## Rider / JetBrains IDE
+.idea/
+*.sln.iml
+*.user
+*.userosscache
+*.suo
+
+## .NET Generated
+*.db
+*.db-wal
+*.db-shm
+*.nuget.info
+*.nuget.props
+*.nuget.targets
+
+## Publish / Runtime Output
+**/net9.0/
+**/net9.0-*/ 
+publish/
+Generated\ Files/
+
+## Logs
+*.log
+
+## OS
+.DS_Store
+Thumbs.db
+
+## Rider Index / Temp
+.ReSharper*/
+.vs/
+.cache/
