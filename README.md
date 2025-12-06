@@ -51,3 +51,67 @@ Local conversion happens first (CPU heavy), then results are uploaded.
 git clone https://github.com/yourname/HLS-Tool.git
 cd HLS-Tool
 dotnet restore
+
+
+
+Update configuration
+
+Edit appsettings.json:
+
+"AzureBlob": {
+  "ConnectionString": "...",
+  "ContainerName": "..."
+}
+
+"FFmpegSettings": {
+  "LocalWorkDirectory": "/path/to/processing"
+}
+
+
+Run project:
+
+dotnet run
+
+Upload an audio file → Converts → Uploads → Returns .m3u8 streaming URL.
+
+
+🧩 Project Architecture
+
+HLS-Tool/
+ ├── Services/       // Conversion, upload & processing logic
+ ├── Controllers/    // MVC UI + API endpoints
+ ├── Views/          // Simple demo UI for interaction
+ ├── Data/           // EF Core + SQLite context
+ └── wwwroot/        // Static files
+
+
+🤝 Contribution & Issues
+
+This project is open-source and contributions are welcome!
+
+Submit Contributions
+	1.	Fork repo
+	2.	Create feature branch
+git checkout -b feature/my-improvement
+	3.	Commit changes with meaningful messages
+	4.	Submit a Pull Request
+
+Reporting Issues
+	•	Use GitHub Issues for bugs, enhancements, questions
+	•	Include logs, steps to reproduce, and environment info where possible
+
+Ideas to contribute
+	•	Support additional storage providers (S3, GCP, MinIO)
+	•	UI upgrades for upload + playback preview
+	•	Video support & bitrate ladder configuration
+	•	Docker-based FFmpeg automation
+
+
+License
+
+MIT — free to use, modify, and distribute.
+
+
+Enjoy building streaming experiences.
+
+If you create something using this tool, share it! Dont forget to start this repository as well!
