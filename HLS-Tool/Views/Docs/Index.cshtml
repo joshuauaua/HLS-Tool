@@ -1,0 +1,113 @@
+@{
+    ViewData["Title"] = "Documentation";
+}
+
+<div class="container-fluid">
+    <div class="row" style="height: 90vh;">
+
+        <!-- Sidebar -->
+        <div class="col-3 border-end p-3 overflow-auto" style="max-height: 90vh;">
+            <h4 class="fw-bold mb-3">Documentation</h4>
+
+            <nav class="nav flex-column">
+                <a class="nav-link" href="#intro">Introduction</a>
+                <a class="nav-link" href="#setup">Project Setup</a>
+                <a class="nav-link" href="#config">Configuration</a>
+                <a class="nav-link" href="#sqlite">Using SQLite Storage</a>
+                <a class="nav-link" href="#blob">Blob Storage Integration</a>
+                <a class="nav-link" href="#ffmpeg">FFmpeg & Transcoding</a>
+                <a class="nav-link" href="#upload">Uploading + HLS Conversion</a>
+                <a class="nav-link" href="#api">API Endpoints</a>
+                <a class="nav-link" href="#contribute">Contributing</a>
+            </nav>
+        </div>
+
+        <!-- Main Documentation Body -->
+        <div class="col-9 p-4 overflow-auto" style="max-height: 90vh;">
+
+            <!-- Each section below becomes a doc topic -->
+
+            <section id="intro" class="mb-5">
+                <h2>Introduction</h2>
+                <p>
+                    This documentation covers setup, configuration, and usage of the
+                    HLS Tool — a C#-based audio streaming toolkit for generating 
+                    <strong>HLS segmented audio files</strong> and managing them through 
+                    cloud storage (Azure Blob by default).
+                </p>
+            </section>
+
+            <section id="setup" class="mb-5">
+                <h2>Project Setup</h2>
+                <ol>
+                    <li>Clone the repository</li>
+                    <li>Install FFmpeg locally</li>
+                    <li>Configure appsettings and Blob credentials</li>
+                    <li>Run migrations & start the server</li>
+                </ol>
+            </section>
+
+            <section id="config" class="mb-5">
+                <h2>Configuration Files</h2>
+                <p>
+                    All environment specific settings are located in 
+                    <code>appsettings.json</code>, with overrides in 
+                    <code>appsettings.Development.json</code>.
+                </p>
+                <pre><code>{
+  "ConnectionStrings": {
+    "DefaultConnection": "Data Source=HLS_Tool.db"
+  },
+  "AzureBlob": {
+    "ConnectionString": "...",
+    "ContainerName": "tracks"
+  }
+}</code></pre>
+            </section>
+
+            <section id="sqlite" class="mb-5">
+                <h2>Using SQLite Database</h2>
+                <p>
+                    The toolkit uses SQLite for simplicity in development.  
+                    The file <code>HLS_Tool.db</code> is generated automatically.  
+                </p>
+            </section>
+
+            <section id="blob" class="mb-5">
+                <h2>Blob Storage Integration</h2>
+                <p>
+                    Tracks are automatically uploaded and stored in Azure Blob, 
+                    then made streamable via HLS playlist URLs.
+                </p>
+            </section>
+
+            <section id="ffmpeg" class="mb-5">
+                <h2>FFmpeg Transcoding</h2>
+                <p>
+                    FFmpeg handles converting uploaded files into HLS segments.
+                </p>
+            </section>
+
+            <section id="upload" class="mb-5">
+                <h2>Uploading & Generating HLS</h2>
+                <p>
+                    Upload an audio file and the system generates .m3u8 and .ts chunks.
+                </p>
+            </section>
+
+            <section id="api" class="mb-5">
+                <h2>API Endpoints</h2>
+                <p>COMING SOON — will document upload endpoints & playback URLs.</p>
+            </section>
+
+            <section id="contribute" class="mb-5">
+                <h2>Contributing</h2>
+                <p>
+                    Contributions are welcome — submit PRs on GitHub.  
+                    Contributors will be credited publicly.
+                </p>
+            </section>
+
+        </div>
+    </div>
+</div>

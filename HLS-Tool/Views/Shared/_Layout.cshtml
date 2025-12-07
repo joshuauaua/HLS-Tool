@@ -4,47 +4,87 @@
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>@ViewData["Title"] - HLS Tool</title>
-    <script type="importmap"></script>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css"/>
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true"/>
     <link rel="stylesheet" href="~/HLS_Tool.styles.css" asp-append-version="true"/>
+
+    <style>
+        footer {
+            background: #0e0e0e;
+            color: #cfcfcf;
+            padding: 2rem 0;
+        }
+        footer a {
+            color: #9fcdff;
+            text-decoration: none;
+        }
+        footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
 </head>
+
 <body>
+
 <header>
-    <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-        <div class="container-fluid">
-            <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">HLS_Tool</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                    aria-expanded="false" aria-label="Toggle navigation">
+    <nav class="navbar navbar-expand-sm navbar-light bg-white border-bottom shadow-sm mb-4">
+        <div class="container">
+
+            <!-- Logo / Brand -->
+            <a class="navbar-brand fw-bold" asp-controller="Home" asp-action="Index">
+                <img src="~/img/logo.png" alt="HLS Tool" style="height:30px; margin-right:8px;">
+                HLS Tool
+            </a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                <ul class="navbar-nav flex-grow-1">
+
+            <!-- Right-aligned links -->
+            <div class="collapse navbar-collapse justify-content-end" id="mainNav">
+                <ul class="navbar-nav mb-2 mb-sm-0">
                     <li class="nav-item">
-                        <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                        <a class="nav-link" asp-controller="About" asp-action="Index">About</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-dark" asp-area="" asp-controller="Docs" asp-action="Index">Documentation</a>
+                        <a class="nav-link" asp-controller="Docs" asp-action="Index">Documentation</a>
                     </li>
                 </ul>
             </div>
+
         </div>
     </nav>
 </header>
-<div class="container">
-    <main role="main" class="pb-3">
+
+
+<div class="container pb-5">
+    <main role="main" class="pb-5">
         @RenderBody()
     </main>
 </div>
 
-<footer class="border-top footer text-muted">
-    <div class="container">
-        &copy; 2025 - HLS_Tool - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+<!-- FOOTER -->
+<footer>
+    <div class="container text-center">
+
+        <h5 class="fw-bold mb-3" style="color:white;">HLS Tool</h5>
+        <p>A project by <a href="https://www.sonicassembly.se" target="_blank">Sonic Assembly</a>, Stockholm.</p>
+
+        <div class="mb-3">
+            <a asp-controller="Home" asp-action="About">About</a> ·
+            <a asp-controller="Home" asp-action="Docs">Documentation</a> ·
+            <a href="https://github.com/joshuauaua/HLS-Tool" target="_blank">GitHub Repo</a>
+        </div>
+
+        <small>© @DateTime.Now.Year Sonic Assembly • Tools for audio technology</small>
     </div>
 </footer>
+
+
 <script src="~/lib/jquery/dist/jquery.min.js"></script>
 <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
 <script src="~/js/site.js" asp-append-version="true"></script>
 @await RenderSectionAsync("Scripts", required: false)
+
 </body>
 </html>

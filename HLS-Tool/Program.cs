@@ -62,7 +62,7 @@ namespace Hyper_Radio_API
             // 👉 Default route = Home/Index
             app.MapControllerRoute(
                 name: "default",
-                pattern: "{controller=TracksView}/{action=Index}/{id?}");
+                pattern: "{controller=Home}/{action=Index}/{id?}");
 
             // Optional if you also want API endpoints using attribute routing
             // app.MapControllers();

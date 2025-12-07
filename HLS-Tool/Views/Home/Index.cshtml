@@ -1,0 +1,48 @@
+@{
+    ViewData["Title"] = "Home";
+}
+
+<div class="container mt-5">
+
+    <h1 class="display-4 fw-bold">HLS Audio Streaming Toolkit 🎧</h1>
+    <p class="lead mt-3">
+        A ready-to-use C# template for converting audio files into HLS format and storing them in Blob Storage.
+    </p>
+
+    <hr class="my-4" />
+
+    <section class="mt-4">
+        <h2 class="fw-semibold">Why this project exists</h2>
+        <p>
+            When building a web platform involving audio streaming, two major challenges quickly appear:
+        </p>
+        <ul>
+            <li><strong>HLS Conversion</strong> — properly chunking, segmenting and generating <code>.m3u8</code> playlists using FFmpeg.</li>
+            <li><strong>Storage Management</strong> — handling uploads, retrieval and streaming from Blob storage at scale.</li>
+        </ul>
+        <p>
+            These tasks can easily become a road-block for developers. We built this project so you don’t have to start from scratch.
+        </p>
+    </section>
+
+    <section class="mt-4">
+        <h2 class="fw-semibold">What this toolkit gives you</h2>
+        <ul>
+            <li>Upload an audio track from the UI</li>
+            <li>Automatic HLS conversion using FFmpeg</li>
+            <li>Segment upload to Azure Blob Storage</li>
+            <li>A clean MVC structure with repository/service layers</li>
+            <li>A simple starting point for any audio streaming web service</li>
+        </ul>
+    </section>
+
+    <section class="mt-4">
+        <h2 class="fw-semibold">Get started</h2>
+        <p>
+            Head over to <a href="/TracksView" class="fw-bold">Tracks</a> to upload a file and see it processed into HLS format.
+        </p>
+
+        <a href="/TracksView/Create" class="btn btn-primary btn-lg mt-2">Upload Your First Track</a>
+    </section>
+
+</div>
